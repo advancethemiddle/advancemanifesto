@@ -1,24 +1,38 @@
-<%= turbo_stream_from "pledge_count" %>
-<%= form_for @pledge do |form| %>
-  <%= form.label :first_name %>
-  <%= form.text_field :first_name %>
-  <%= form.label :last_name %>
-  <%= form.text_field :last_name %>
-  <%= form.label :email %>
-  <%= form.text_field :email %>
-  <%= form.submit "Sign" %>
-<% end %>
+<header class="relative flex justify-center items-center min-h-[500px] bg-gradient-to-br from-mango to-persimmon overflow-hidden">
+  <figure class="text-white w-full max-w-[550px] px-10">
+    <%= render "logo" %>
+    <figcaption class="hidden">White Advance Manifesto logo</figcaption>
+  </figure>
+  <div class="absolute top-6 right-0 opacity-60 xl:opacity-100">
+    <%= render "wordmark_pattern", locals: { position: :right } %>
+  </div>
+  <div class="absolute left-0 bottom-6 opacity-60 xl:opacity-100">
+    <%= render "wordmark_pattern", locals: { position: :left } %>
+  </div>
+</header>
+<section>
+  <%= turbo_stream_from "pledge_count" %>
+  <%= form_for @pledge do |form| %>
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+    <%= form.submit "Sign" %>
+  <% end %>
 
-<% if flash[:success] %>
-  <aside>
-    <p><%= flash[:success] %></p>
-  </aside>
-<% end %>
+  <% if flash[:success] %>
+    <aside>
+      <p><%= flash[:success] %></p>
+    </aside>
+  <% end %>
 
-<% if flash[:error] %>
-  <aside>
-    <p><%= flash[:error] %></p>
-  </aside>
-<% end %>
+  <% if flash[:error] %>
+    <aside>
+      <p><%= flash[:error] %></p>
+    </aside>
+  <% end %>
 
-<%= render "pledge_count" %>
+  <%= render "pledge_count" %>
+</section>
