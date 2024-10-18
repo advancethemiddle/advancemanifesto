@@ -10,11 +10,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+        sans: ["Poppins", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         mango: "#FD6119",
         persimmon: "#EA4A00",
+        soil: "#222222",
       },
     },
   },
