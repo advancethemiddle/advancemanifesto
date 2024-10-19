@@ -43,35 +43,54 @@
       <p class="text-soil text-base	leading-8">
         Overlooked, disregarded, and far underestimated, these technologists know grit better than any of us. They’ve searched for jobs to no avail, wrestled with technical problems with little help, and spent long nights fretting over their dreams.
       </p>
-      <p class="text-soil font-medium text-xl md:text-2xl">
+      <p class="text-soil font-medium text-xl z-10 md:text-2xl">
         The middle needs us as much as we need them. Sign the manifesto now to make a way for the next generation of technologists.
       </p>
     </article>
   </div>
 </section>
-
-<section>
-  <%= form_for @pledge do |form| %>
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-    <%= form.submit "Sign" %>
+<section class="relative py-24 bg-soil w-full flex flex-col items-center gap-8">
+  <section class="flex flex-col justify-center gap-4 w-full max-w-[894px] px-5 md:px-10 lg:px-0">
+    <h2 class="font-bold text-3xl md:text-[40px] text-white">Make Your Pledge</h2>
+    <p class="text-white text-base leading-8">Today, in light of the technologists stuck in the middle, I commit to advancing the next generation of problem-solvers in four ways:</p>
+    <ul class="list-disc ml-8">
+      <li class="text-white text-base leading-8">I will forge paths for those behind me and ahead of me through career and learning opportunities.</li>
+      <li class="text-white text-base leading-8">I will lower the barrier to entry by openly sharing domain and technical knowledge.</li>
+      <li class="text-white text-base leading-8">I will create formal and informal spaces for mentorship and mentoring.</li>
+      <li class="text-white text-base leading-8">And through honesty about my own works in progress, I will build lasting relationships that enrich community flourishing.</li>
+    </ul>
+    <p class="text-white text-base leading-8 font-bold">Today, I will advance the middle.</p>
+  </section>
+  <%= form_for @pledge, html: { class: "flex flex-col justify-center gap-5 w-full max-w-[894px] px-5 md:px-10 lg:px-0" } do |form| %>
+    <section class="flex flex-col gap-5 sm:flex-row">
+      <div class="flex flex-col w-full">
+        <%= form.label :first_name, class: "bg-soil w-fit text-white font-medium italic px-3 uppercase ml-8 -mb-[10px] z-10 text-xs" %>
+        <%= form.text_field :first_name, required: true, class: "bg-transparent border-2 border-mango radius-0 h-11 px-3 text-white focus:outline-0 focus:border-yellow-400" %>
+      </div>
+      <div class="flex flex-col w-full">
+        <%= form.label :last_name, class: "bg-soil w-fit text-white font-medium italic px-3 uppercase ml-8 -mb-[10px] z-10 text-xs" %>
+        <%= form.text_field :last_name, required: true, class: "bg-transparent border-2 border-mango radius-0 h-11 px-3 text-white focus:outline-0 focus:border-yellow-400" %>
+      </div>
+    </section>
+    <section class="flex flex-col w-full">
+      <%= form.label :email, class: "bg-soil w-fit text-white font-medium italic px-3 uppercase ml-8 -mb-[10px] z-10 text-xs" %>
+      <%= form.text_field :email, required: true, class: "bg-transparent border-2 border-mango radius-0 h-11 px-3 text-white focus:outline-0 focus:border-yellow-400" %>
+    </section>
+    <section class="flex flex-col gap-3 items-end">
+      <%= form.submit "Sign", class: "flex justify-center items-center px-8 min-h-11 bg-mango font-medium italic uppercase text-white text-lg cursor-pointer hover:bg-persimmon" %>
+    </section>
   <% end %>
-
-  <% if flash[:success] %>
-    <aside>
-      <p><%= flash[:success] %></p>
-    </aside>
-  <% end %>
-
-  <% if flash[:error] %>
-    <aside>
-      <p><%= flash[:error] %></p>
-    </aside>
-  <% end %>
-
-
+  <%= render "swirly_arrow" %>
 </section>
+<% if flash[:success] %>
+  <aside class="flex items-center justify-between gap-3 fixed top-8 left-1/2 -translate-x-1/2 text-white font-lg px-3 py-2 text-center bg-green-500 z-50 min-w-[90%] md:min-w-64">
+    <%= flash[:success] %>
+    <%= render "close_button" %>
+  </aside>
+<% end %>
+<% if flash[:error] %>
+  <aside class="flex items-center justify-between gap-3 fixed top-8 left-1/2 -translate-x-1/2 text-white font-lg px-3 py-2 text-center bg-red-600 z-50 min-w-[90%] md:min-w-64">
+    <%= flash[:error] %>
+    <%= render "close_button" %>
+  </aside>
+<% end %>

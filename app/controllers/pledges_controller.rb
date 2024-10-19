@@ -7,7 +7,7 @@ class PledgesController < ApplicationController
     @pledge = Pledge.new(pledge_params)
 
     if @pledge.save
-      flash[:success] = "Thanks for signing!"
+      flash[:success] = "Thanks for signing! 🥳"
       redirect_to :root
     else
       flash[:error] = "Eek! We had trouble saving your pledge. Please try again later."
