@@ -3,5 +3,5 @@ class Pledge < ApplicationRecord
   validates_uniqueness_of :email
   validates_format_of :email, with: URI::MailTo::EMAIL_REGEXP
 
-  after_create_commit -> { broadcast_update_to "pledge_count", target: "pledge_count", partial: "pledges/pledge_count" }
+  after_create_commit -> { broadcast_update_to "pledge_count", target: "pledge_count", partial: "pledges/pitch/pledge_count" }
 end
