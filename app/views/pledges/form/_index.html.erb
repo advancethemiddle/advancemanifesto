@@ -1,32 +1,32 @@
-<section class="relative py-24 bg-soil w-full flex flex-col items-center gap-8">
+<section class="transition-all duration-700 opacity-0 fixed bottom-0 left-0 bg-soil w-full flex flex-col items-center gap-8 z-50 py-8" data-pledge-target="form">
   <section class="flex flex-col justify-center gap-4 w-full max-w-content px-5 md:px-10 lg:px-0">
     <h2 class="font-bold text-3xl md:text-[40px] text-white">Make Your Pledge</h2>
-    <p class="text-white text-base leading-8">Today, in light of the technologists stuck in the middle, I commit to advancing the next generation of problem-solvers in four ways:</p>
-    <ul class="list-disc ml-8">
+    <p class="transition-all duration-1000 opacity-0 text-white text-base leading-8 hidden">Today, in light of the technologists stuck in the middle, I commit to advancing the next generation of problem-solvers in four ways:</p>
+    <ul class="transition-all duration-1000 opacity-0 list-disc ml-8 hidden">
       <li class="text-white text-base leading-8">I will forge paths for those behind me and ahead of me through career and learning opportunities.</li>
       <li class="text-white text-base leading-8">I will lower the barrier to entry by openly sharing domain and technical knowledge.</li>
       <li class="text-white text-base leading-8">I will create formal and informal spaces for mentorship and mentoring.</li>
       <li class="text-white text-base leading-8">And through honesty about my own works in progress, I will build lasting relationships that enrich community flourishing.</li>
     </ul>
-    <p class="text-white text-base leading-8 font-bold">Today, I will advance the middle.</p>
+    <p class="transition-all duration-1000 opacity-0 text-white text-base leading-8 font-bold hidden">Today, I will advance the middle.</p>
   </section>
   <%= form_for @pledge, html: { class: "flex flex-col justify-center gap-5 w-full max-w-content px-5 md:px-10 lg:px-0" } do |form| %>
     <section class="flex flex-col gap-5 sm:flex-row">
       <div class="flex flex-col w-full">
         <%= form.label :first_name, class: "bg-soil w-fit text-white font-medium italic px-3 uppercase ml-8 -mb-[10px] z-10 text-xs" %>
-        <%= form.text_field :first_name, required: true, class: "bg-transparent border-2 border-mango radius-0 h-11 px-3 text-white focus:outline-0 focus:border-yellow-400" %>
+        <%= form.text_field :first_name, required: true, class: "bg-transparent border-2 border-mango rounded-none h-11 px-3 text-white focus:outline-0 focus:border-yellow-400" %>
       </div>
       <div class="flex flex-col w-full">
         <%= form.label :last_name, class: "bg-soil w-fit text-white font-medium italic px-3 uppercase ml-8 -mb-[10px] z-10 text-xs" %>
-        <%= form.text_field :last_name, required: true, class: "bg-transparent border-2 border-mango radius-0 h-11 px-3 text-white focus:outline-0 focus:border-yellow-400" %>
+        <%= form.text_field :last_name, required: true, class: "bg-transparent border-2 border-mango rounded-none h-11 px-3 text-white focus:outline-0 focus:border-yellow-400" %>
       </div>
     </section>
     <section class="flex flex-col w-full">
       <%= form.label :email, class: "bg-soil w-fit text-white font-medium italic px-3 uppercase ml-8 -mb-[10px] z-10 text-xs" %>
-      <%= form.text_field :email, required: true, class: "bg-transparent border-2 border-mango radius-0 h-11 px-3 text-white focus:outline-0 focus:border-yellow-400" %>
+      <%= form.text_field :email, required: true, class: "bg-transparent border-2 border-mango rounded-none h-11 px-3 text-white focus:outline-0 focus:border-yellow-400" %>
     </section>
     <section class="flex flex-col gap-3 items-end">
-      <%= form.submit "Sign", class: "flex justify-center items-center px-8 min-h-11 bg-mango font-medium italic uppercase text-white text-lg cursor-pointer hover:bg-persimmon" %>
+      <%= form.submit "Sign", class: "flex justify-center items-center px-8 min-h-11 bg-mango font-medium italic uppercase text-white text-lg cursor-pointer rounded-none border-2 border-mango hover:bg-persimmon hover:border-persimmon focus:outline-0 focus:border-yellow-400" %>
     </section>
   <% end %>
   <%= render "pledges/form/swirly_arrow" %>
