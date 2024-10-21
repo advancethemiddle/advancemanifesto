@@ -1,0 +1,12 @@
+<header class="relative flex justify-center items-center h-[350px] bg-gradient-to-br from-mango to-persimmon overflow-hidden" data-pledge-target="hero">
+  <figure class="text-white w-full max-w-[550px] px-10">
+    <%= render "pledges/hero/logo" %>
+    <figcaption class="hidden">White Advance Manifesto logo</figcaption>
+  </figure>
+  <div class="absolute top-6 right-0 opacity-60 xl:opacity-100">
+    <%= render "pledges/hero/wordmark_pattern", locals: { position: :right } %>
+  </div>
+  <div class="absolute left-0 bottom-6 opacity-60 xl:opacity-100">
+    <%= render "pledges/hero/wordmark_pattern", locals: { position: :left } %>
+  </div>
+</header>
