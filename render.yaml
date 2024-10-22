@@ -1,0 +1,34 @@
+databases:
+  - name: advance_manifesto_datastore
+    databaseName: advance_manifesto_production
+    plan: free
+    region: virginia
+services:
+  - type: web
+    name: advance_manifesto_webstore
+    runtime: ruby
+    plan: free
+    region: virginia
+    buildCommand: "./bin/build.sh"
+    startCommand: "bundle exec rails server"
+    envVars:
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: advance_manifesto_redis
+          property: connectionString
+      - key: DATABASE_URL
+        fromDatabase:
+          name: advance_manifesto_datastore
+          property: connectionString
+  - type: redis
+    name: advance_manifesto_redis
+    plan: free
+    region: virginia
+    maxmemoryPolicy: noeviction
+    ipAllowList: []
+
