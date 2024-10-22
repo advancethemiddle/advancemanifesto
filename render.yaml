@@ -1,0 +1,30 @@
+databases:
+  - name: advance_manifesto_datastore
+    databaseName: advance_manifesto_production
+    plan: free
+
+services:
+  - type: web
+    name: advance_manifesto_webstore
+    runtime: ruby
+    plan: free
+    buildCommand: "./bin/build.sh"
+    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
+    startCommand: "bundle exec rails server"
+    envVars:
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: advance_manifesto_redis
+          property: connectionString
+  - type: redis
+    name: advance_manifesto_redis
+    plan: free
+    region: ohio
+    maxmemoryPolicy: noeviction
+    ipAllowList: [] # only allow internal connections
+
