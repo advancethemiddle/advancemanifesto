@@ -8,6 +8,10 @@ class PledgesController < ApplicationController
 
     if @pledge.save
       flash[:success] = "Thanks for signing! 🥳"
+      PledgeMailer.new_pledge(
+        first_name: pledge_params[:first_name],
+        email: pledge_params[:email]
+      ).deliver_later
       redirect_to :root
     else
       flash[:error] = "Eek! We had trouble saving your pledge. Please try again later."
