@@ -31,4 +31,19 @@ services:
     region: virginia
     maxmemoryPolicy: noeviction
     ipAllowList: []
+  - type: worker
+    name: advance_manifesto_sidekiq_worker
+    runtime: ruby
+    region: virginia
+    buildCommand: bundle install
+    startCommand: bundle exec sidekiq
+    plan: starter
+    envVars:
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: advance_manifesto_redis
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
 
