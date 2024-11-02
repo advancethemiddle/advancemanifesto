@@ -8,7 +8,19 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
     expose:
       - "5432"
+    volumes:
+      - ./tmp/.development/pg:/var/lib/postgresql/data
   redis:
     image: redis:7.4
     ports:
       - "6379:6379"
+  mailpit:
+    image: axllent/mailpit
+    restart: unless-stopped
+    ports:
+      - 8025:8025
+      - 1025:1025
+    environment:
+      MP_VERBOSE: true
+      MP_SMTP_AUTH_ACCEPT_ANY: true
+      MP_SMTP_AUTH_ALLOW_INSECURE: true

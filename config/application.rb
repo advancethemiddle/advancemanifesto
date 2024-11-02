@@ -23,5 +23,19 @@ module AdvanceManifesto
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.action_mailer.default_options = { from: "Sunjay Armstead <no-reply@advancemanifesto.com>" }
+
+    config.action_mailer.smtp_settings = {
+      user_name: ENV["SMTP_USERNAME"],
+      password: ENV["SMTP_PASSWORD"],
+      port: ENV["SMTP_PORT"],
+      domain: ENV["SMTP_DOMAIN"],
+      address: ENV["SMTP_ADDRESS"],
+      authentication: :plain,
+      enable_starttls_auto: true
+    }
+
+    config.active_job.queue_adapter = :sidekiq
   end
 end

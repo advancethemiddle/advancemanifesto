@@ -12,23 +12,20 @@ services:
     buildCommand: "./bin/build.sh"
     startCommand: "bundle exec rails server"
     envVars:
-      - key: RAILS_MASTER_KEY
-        sync: false
-      - key: WEB_CONCURRENCY
-        value: 2
-      - key: REDIS_URL
-        fromService:
-          type: redis
-          name: advance_manifesto_redis
-          property: connectionString
-      - key: DATABASE_URL
-        fromDatabase:
-          name: advance_manifesto_datastore
-          property: connectionString
+      - fromGroup: advance_manifesto_production_group
   - type: redis
     name: advance_manifesto_redis
     plan: free
     region: virginia
     maxmemoryPolicy: noeviction
     ipAllowList: []
+  - type: worker
+    name: advance_manifesto_sidekiq_worker
+    runtime: ruby
+    region: virginia
+    buildCommand: bundle install && bundle exec rails assets:precompile && bundle exec rails assets:clean
+    startCommand: bundle exec sidekiq
+    plan: starter
+    envVars:
+      - fromGroup: advance_manifesto_production_group
 

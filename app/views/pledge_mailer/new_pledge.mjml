@@ -1,0 +1,61 @@
+<mjml>
+
+  <mj-head>
+		<mj-style>
+    	.letter__column { margin-top: -40px !important; }
+      @media (min-width: 768px) {
+      	.letter__column { margin-top: -75px !important; }
+      }
+    </mj-style>
+    <mj-font name="Poppins"
+       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+    <mj-attributes>
+      <mj-text align="center" color="#555" />
+      <mj-section background-color="#fff" />
+    </mj-attributes>
+  </mj-head>
+
+  <mj-body width="600px">
+    <mj-hero
+      mode="fluid-height"
+      background-width="600px"
+      background-height="278px"
+      background-url=
+          "https://www.dropbox.com/scl/fi/yvusy1fh6nduehll0jonl/header.png?rlkey=w61vhq6z0rb43hqrsudoyxapf&st=4frjbgwf&raw=1"
+      background-color="#fff"
+      background-position="bottom center"
+      vertical-align="bottom">
+    </mj-hero>
+    <mj-section full-width padding="0">
+    	<mj-column padding="40px" css-class="letter__column">
+      	<mj-text padding="0" align="left" font-family="Poppins, Arial" font-size="16px">
+        	<p style="line-height: 24px; margin-bottom: 24px;">Hey, Sandy!</p>
+          <p style="line-height: 24px; margin-bottom: 24px;">You just took a pledge. Let that sink in....</p>
+          <p style="line-height: 24px; margin-bottom: 24px;">You are now among a growing collective of technologists that are vowing to rethread the fabric of our industry.</p>
+          <p style="line-height: 24px; margin-bottom: 24px;">So thank you, friend, for pledging to make a difference.</p>
+          <p style="line-height: 24px; margin-bottom: 24px;">You are where you are today because of the generous advancers who took a risk on <span style="font-style: italic;">you</span>—no matter how small. I am so glad that you are pledging to do the same for the next generation of technologists.</p>
+          <p style="line-height: 24px; margin-bottom: 24px;">In this together,</p>
+          <p style="font-style: italic; font-weight: bold; line-height: 24px;">Sunjay</p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section  full-width padding="0">
+    	<mj-column padding="60px 40px" background-color="#222222">
+        <mj-text padding="0 0 24px 0" align="left" font-family="Poppins, Arial" font-size="16px" color="white">
+          <h2 style="margin-bottom: 24px; font-size: 28px;">What’s Next?</h2>
+          <p style="line-height: 24px; margin-bottom: 24px;">This movement is young, wild, and free. The sky’s the limit and <span style="text-decoration: underline; font-weight: bold;">we</span> get to shape it into something incredible.</p>
+          <p style="line-height: 24px;">So, Sandy, <span style="text-decoration: underline; font-weight: bold;">what would you like to build together?</span></p>
+        </mj-text>
+        <mj-button font-family="Poppins, Arial" font-size="18px" font-style="italic" height="44px" width="100%" border-radius="0" background-color="#fd6119" container-background-color="#fd6119" inner-padding="0" padding="0" text-transform="uppercase" href="#">Share Your Ideas</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section full-width padding="0">
+      <mj-column padding="24px 40px" background-color="#fd6119">
+        <mj-text padding="0" align="center" font-family="Poppins, Arial" font-size="12px" color="white" font-style="italic" text-transform="uppercase" line-height="8px">
+          <a style="font-weight: bold; color: white; text-decoration: none;" href="https://advancemanifesto.com">advancemanifesto.com</a>
+          <p style=" margin-bottom: 0;">Copyright © 2024 Sunjay Armstead</p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
