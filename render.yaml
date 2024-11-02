@@ -12,19 +12,7 @@ services:
     buildCommand: "./bin/build.sh"
     startCommand: "bundle exec rails server"
     envVars:
-      - key: RAILS_MASTER_KEY
-        sync: false
-      - key: WEB_CONCURRENCY
-        value: 2
-      - key: REDIS_URL
-        fromService:
-          type: redis
-          name: advance_manifesto_redis
-          property: connectionString
-      - key: DATABASE_URL
-        fromDatabase:
-          name: advance_manifesto_datastore
-          property: connectionString
+      - fromGroup: advance_manifesto_production_group
   - type: redis
     name: advance_manifesto_redis
     plan: free
@@ -39,11 +27,5 @@ services:
     startCommand: bundle exec sidekiq
     plan: starter
     envVars:
-      - key: REDIS_URL
-        fromService:
-          type: redis
-          name: advance_manifesto_redis
-          property: connectionString
-      - key: RAILS_MASTER_KEY
-        sync: false
+      - fromGroup: advance_manifesto_production_group
 
