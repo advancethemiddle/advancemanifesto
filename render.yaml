@@ -35,7 +35,7 @@ services:
     name: advance_manifesto_sidekiq_worker
     runtime: ruby
     region: virginia
-    buildCommand: bundle install
+    buildCommand: bundle install && bundle exec rails assets:precompile && bundle exec rails assets:clean
     startCommand: bundle exec sidekiq
     plan: starter
     envVars:
