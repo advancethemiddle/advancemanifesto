@@ -3,6 +3,7 @@
   <head>
     <title><%= content_for(:title) || "Advance Manifesto" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= render "layouts/google_analytics/data_layer" %>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="description" content="Sign the Advance Manifesto now to make a way for the next generation of technologists 🚀">
     <%= csrf_meta_tags %>
@@ -20,6 +21,7 @@
   </head>
 
   <body>
+    <%= render "layouts/google_analytics/fallback" %>
     <main class="flex-col justify-center">
       <%= yield %>
     </main>
