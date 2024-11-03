@@ -1,13 +1,13 @@
 databases:
   - name: advance_manifesto_datastore
     databaseName: advance_manifesto_production
-    plan: free
+    plan: basic-256mb
     region: virginia
 services:
   - type: web
     name: advance_manifesto_webstore
     runtime: ruby
-    plan: free
+    plan: starter
     region: virginia
     buildCommand: "./bin/build.sh"
     startCommand: "bundle exec rails server"
