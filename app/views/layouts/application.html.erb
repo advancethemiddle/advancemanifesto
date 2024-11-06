@@ -2,9 +2,11 @@
 <html>
   <head>
     <title><%= content_for(:title) || "Advance Manifesto" %></title>
+    <meta property="og:title" content="<%= content_for(:title) || "Advance Manifesto" %>" />
+    <meta property="og:site_name" content="Advance Manifesto" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="description" content="Sign the Advance Manifesto now to make a way for the next generation of technologists 🚀">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 

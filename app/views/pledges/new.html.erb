@@ -1,3 +1,13 @@
+<% content_for :title, "Sign the Advance Manifesto" %>
+
+<%= content_for :head do %>
+  <meta name="description" content="Sign the Advance Manifesto now to make a way for the next generation of technologists 🚀">
+  <meta property="og:description" content="Sign the Advance Manifesto now to make a way for the next generation of technologists 🚀" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://advancemanifesto.com" />
+  <meta property="og:image" content="<%= image_url 'pledges/og-image.png' %>" />
+<% end %>
+
 <div>
   <%= render "pledges/hero/index" %>
   <%= render "pledges/pitch/index" %>
