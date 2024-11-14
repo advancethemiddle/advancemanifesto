@@ -25,8 +25,25 @@
     <main class="flex-col justify-center">
       <%= yield %>
     </main>
-    <footer class="flex justify-center w-full bg-mango py-6 px-5 md:px-10">
-      <small class="font-extrabold text-sm italic uppercase text-white">Copyright © <%= Date.current.year %> Sunjay Armstead</small>
+    <footer class="flex justify-center items-center w-full bg-mango py-6 px-5 md:px-10">
+      <small class="font-extrabold text-sm italic uppercase text-white pr-3 border-r border-white">Copyright © <%= Date.current.year %> Sunjay Armstead</small>
+      <a class="block font-extrabold text-sm italic uppercase text-white ml-3" title="View source code on GitHub" href="https://github.com/advancethemiddle/advancemanifesto">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
+          <g clip-path="url(#clip0_202_221)">
+          <g clip-path="url(#clip1_202_221)">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M15.9907 0C7.14824 0 0 7.20094 0 16.1095C0 23.2306 4.58013 29.2584 10.934 31.3919C11.7284 31.5522 12.0194 31.0452 12.0194 30.6187C12.0194 30.2453 11.9932 28.9651 11.9932 27.6313C7.54495 28.5917 6.61865 25.711 6.61865 25.711C5.90379 23.844 4.8446 23.3641 4.8446 23.3641C3.3887 22.3773 4.95065 22.3773 4.95065 22.3773C6.56562 22.484 7.41304 24.0309 7.41304 24.0309C8.84243 26.4844 11.1457 25.7912 12.0724 25.3643C12.2046 24.3241 12.6285 23.604 13.0785 23.2041C9.53077 22.8306 5.79807 21.4438 5.79807 15.2559C5.79807 13.4955 6.43306 12.0554 7.43923 10.9353C7.28048 10.5353 6.72437 8.88138 7.5983 6.66775C7.5983 6.66775 8.94848 6.24093 11.9928 8.32134C13.2962 7.96871 14.6404 7.78933 15.9907 7.78782C17.3409 7.78782 18.7172 7.97472 19.9882 8.32134C23.0329 6.24093 24.383 6.66775 24.383 6.66775C25.257 8.88138 24.7005 10.5353 24.5418 10.9353C25.5745 12.0554 26.1833 13.4955 26.1833 15.2559C26.1833 21.4438 22.4506 22.8037 18.8763 23.2041C19.4589 23.7107 19.9617 24.6708 19.9617 26.1911C19.9617 28.3514 19.9355 30.0852 19.9355 30.6184C19.9355 31.0452 20.2268 31.5522 21.0209 31.3922C27.3747 29.2581 31.9548 23.2306 31.9548 16.1095C31.981 7.20094 24.8066 0 15.9907 0Z" fill="currentColor"/>
+          </g>
+          </g>
+          <defs>
+          <clipPath id="clip0_202_221">
+          <rect width="32" height="32" fill="currentColor"/>
+          </clipPath>
+          <clipPath id="clip1_202_221">
+          <rect width="32.0769" height="31.4223" fill="currentColor"/>
+          </clipPath>
+          </defs>
+        </svg>
+      </a>
     </footer>
   </body>
 </html>
