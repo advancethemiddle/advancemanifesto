@@ -6,7 +6,7 @@ class PledgesController < ApplicationController
   def create
     @pledge = Pledge.new(pledge_params)
 
-    if @pledge.save
+    if safe_submission? && @pledge.save
       flash[:success] = "Thanks for signing! 🥳"
       PledgeMailer.new_pledge(
         first_name: pledge_params[:first_name],
@@ -23,5 +23,11 @@ class PledgesController < ApplicationController
 
   def pledge_params
     params.require(:pledge).permit(:first_name, :last_name, :email)
+  end
+
+  def safe_submission?
+    ::Recaptcha.new(
+      token: params[:g_recaptcha_response]
+    ).call
   end
 end
