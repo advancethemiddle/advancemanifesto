@@ -8,7 +8,7 @@ Now, let's get you set up:
 
 1. Install [Docker Desktop](https://docs.docker.com/desktop/) on your local machine. This allows you to run the database, Redis store, and [Mailpit](https://mailpit.axllent.org/) containers locally. You can, of course, skip this step if Docker's not your thing. Oh whale 🐳!
 1. Pull down this repository to your local machine.
-1. At the root of the project, run `cp .env.example .env`. Then slide on over to your new `.env` file and fill out the empty environment variables. If you're using Docker, feel free to put whatever you want for `SMTP_USERNAME`, `SMTP_PASSWORD`, and `DB_PASSWORD`.
+1. At the root of the project, run `cp .env.example .env`. Then slide on over to your new `.env` file and fill out the empty environment variables. If you're using Docker, feel free to put whatever you want for `SMTP_USERNAME`, `SMTP_PASSWORD`, and `DB_PASSWORD`. Make sure to use reCAPTCHA v3 for all `G_RECAPTCHA_**` values. You can generate your own reCAPTCHA credentials at [https://www.google.com/recaptcha/](https://www.google.com/recaptcha/).
 1. Open the Docker Desktop application. Then, in your termnial, run `docker compose up`. This will create and start the containers for PostgreSQL, Redis, and Mailpit.
 1. In your terminal, run `bin/setup` to install your dependcies and set up your database.
 1. In your terminal, run `bin/rails s` to fire up the development server.
