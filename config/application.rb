@@ -37,5 +37,9 @@ module AdvanceManifesto
     }
 
     config.active_job.queue_adapter = :sidekiq
+
+    # Opt in to Rails 8.1 `to_time` behavior (preserves full timezone rather than offset of the receiver)
+    # https://api.rubyonrails.org/classes/Time.html#method-i-to_time
+    config.active_support.to_time_preserves_timezone = :zone
   end
 end
