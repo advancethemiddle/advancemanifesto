@@ -1,0 +1,52 @@
+<mjml>
+
+  <mj-head>
+		<mj-style>
+    	.letter__column { margin-top: -40px !important; }
+      @media (min-width: 768px) {
+      	.letter__column { margin-top: -75px !important; }
+      }
+    </mj-style>
+    <mj-font name="Poppins"
+       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+    <mj-attributes>
+      <mj-text align="center" color="#555" />
+      <mj-section background-color="#fff" />
+    </mj-attributes>
+  </mj-head>
+
+  <mj-body width="600px">
+    <mj-hero
+      mode="fluid-height"
+      background-width="600px"
+      background-height="278px"
+      background-url=
+          "https://www.dropbox.com/scl/fi/yvusy1fh6nduehll0jonl/header.png?rlkey=w61vhq6z0rb43hqrsudoyxapf&st=4frjbgwf&raw=1"
+      background-color="#fff"
+      background-position="bottom center"
+      vertical-align="bottom">
+    </mj-hero>
+    <mj-section full-width padding="0">
+    	<mj-column padding="40px" css-class="letter__column">
+      	<mj-text padding="0" align="left" font-family="Poppins, Arial" font-size="16px">
+        	<p style="line-height: 24px; margin-bottom: 24px;">Hey, Sandy!</p>
+          <p style="line-height: 24px; margin-bottom: 24px;">It's been a minute since you last heard from me. I hope you are doing well!</p>
+          <p style="line-height: 24px; margin-bottom: 24px;">Today marks a bittersweet milestone. As of today, we have 22 total pledges and I am honored that you joined us in this journey.</p>
+          <p style="line-height: 24px; margin-bottom: 24px;">Sadly, it is time to close up shop for the Advance Manifesto website due to ongoing costs. While the site will no longer be live, you can still access the source code at <a href="https://github.com/advancethemiddle/advancemanifesto">github.com/advancethemiddle/advancemanifesto</a>.</p>
+          <p style="line-height: 24px; margin-bottom: 24px;">The source code is not the only thing that will live on, though. I trust that, as we continue to advance the next generation of technologists, we will leave a lasting mark for those ahead and behind us.</p>
+           <p style="line-height: 24px; margin-bottom: 24px;">So thank you, Sandy, for your pledge to make our industry a better place. If you'd like to stay in touch, drop me a line at <a href="https://www.linkedin.com/in/sunjayarmstead">linkedin.com/in/sunjayarmstead</a>. I can't wait to hear from you. Truly, it's not goodbye, it's see you later!</p>
+          <p style="line-height: 24px; margin-bottom: 24px;">Warm regards,</p>
+          <p style="font-style: italic; font-weight: bold; line-height: 24px;">Sunjay</p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section full-width padding="0">
+      <mj-column padding="24px 40px" background-color="#fd6119">
+        <mj-text padding="0" align="center" font-family="Poppins, Arial" font-size="12px" color="white" font-style="italic" text-transform="uppercase" line-height="8px">
+          <a style="font-weight: bold; color: white; text-decoration: none;" href="https://advancemanifesto.com">advancemanifesto.com</a>
+          <p style=" margin-bottom: 0;">Copyright © 2025 Sunjay Armstead</p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
