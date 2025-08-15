@@ -4,6 +4,10 @@ class PledgeMailerPreview < ActionMailer::Preview
     PledgeMailer.new_pledge(first_name: pledge.first_name, email: pledge.email)
   end
 
+  def goodbye
+    PledgeMailer.goodbye(first_name: pledge.first_name, email: pledge.email)
+  end
+
   private
 
   def pledge
