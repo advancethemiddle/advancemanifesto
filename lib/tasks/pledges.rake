@@ -4,10 +4,14 @@ namespace :pledges do
   desc "Export pledge data"
 
   namespace :export do
-    task all: :environment do
-      export_path = Rails.root.join("tmp/pledges.csv")
+    EXPORT_PATH = Rails.root.join("tmp/pledges.csv")
 
-      CSV.open(export_path, "w") do |file|
+    task all: :environment do
+      if File.exist?(EXPORT_PATH)
+        next puts "The file '#{EXPORT_PATH}' already exists! Please delete the file and try again."
+      end
+
+      CSV.open(EXPORT_PATH, "w") do |file|
         file << [ "id", "first_name", "last_name", "email", "created_at", "updated_at" ]
         Pledge.find_each do |pledge|
           file << [
@@ -21,7 +25,15 @@ namespace :pledges do
         end
       end
 
-      puts "New export file generated at #{export_path}"
+      puts "New export file generated at '#{EXPORT_PATH}'"
+    end
+
+    task clear: :environment do
+      if File.exist?(EXPORT_PATH)
+        next File.delete(EXPORT_PATH)
+      else
+        puts "The file '#{EXPORT_PATH}' does not exist. Aborting task ..." unless File.exist?(EXPORT_PATH)
+      end
     end
   end
 end
