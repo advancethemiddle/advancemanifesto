@@ -36,4 +36,15 @@ namespace :pledges do
       end
     end
   end
+
+  task goodbye: :environment do
+    next puts "Welp, there are no pledges so we couldn't email anyone! Silly billy." if Pledge.count.zero?
+    Pledge.find_each do |pledge|
+      PledgeMailer.goodbye(
+        email: pledge.email,
+        first_name: pledge.first_name
+      ).deliver_later
+    end
+    puts "All done!"
+  end
 end
